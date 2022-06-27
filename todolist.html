@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" type="text/css" href="listas.css" media="screen" />
+    <link rel="icon" href="carrinho.gif">
+</head>
+<body>
+    <p>
+    <img width="300dpi" alt="Carrinho de compras."src="ecommerce10.jpg"/>
+    <p>
+    <h1>Faça sua lista de compras aqui!</h1>
+    <input type="text" id="produto">
+    <button id="btn">Adicionar a lista</button>
+    
+    <p>Colocar no carrinho:</p>
+
+    <ul id="1">
+    </ul>
+
+    <script>
+        var $lista = document.querySelector('ul');
+        var $produto = document.querySelector('#produto');
+        var $botao = document.querySelector('#btn');
+
+        $botao.addEventListener('click', addProduto);
+
+        function addProduto(){
+
+            var item = '<li>' + $produto.value + '</li>' ;
+            $lista.innerHTML += item;
+            $produto.value = '';
+            $produto.focus();
+        }
+
+        $produto.addEventListener('keyup', function(e){
+            console.log(e.keyCode);
+            if (e.keyCode === 13){
+                addProduto()
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
