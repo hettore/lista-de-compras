@@ -9,35 +9,59 @@
     <link rel="icon" href="carrinho.gif">
 </head>
 <body>
+    
     <p>
-    <img width="300dpi" alt="Carrinho de compras."src="ecommerce10.jpg"/>
+    <img class="displayed" width="300dpi" title="Carrinho de compras." alt="Carrinho de compras."src="ecommerce10.jpg"/>
     <p>
+
     <h1>Faça sua lista de compras aqui!</h1>
     <hr>
-    <input type="text" id="produto">
+    
+    <input type="text"  id="produto">
     <button id="btn">Adicionar a lista</button>
+
+    <!--
+    <button id="del">Remover</button>
+    -->
     
     <p>Colocar no carrinho:</p>
 
-    <ul id="1">
+    <ul>
     </ul>
-    <hr>
-    <img width="150dpi" alt="Carrinho de compras."src="carrinho.gif"/>
 
+    <hr>
+
+    <img class="displayed" width="150dpi" title="Carrinho de compras animado." alt="Carrinho de compras."src="carrinho.gif"/>
+    
     <script>
         var $lista = document.querySelector('ul');
         var $produto = document.querySelector('#produto');
         var $botao = document.querySelector('#btn');
 
+        /*
+        var $botaoDel = document.querySelector('#del');
+        */
+
         $botao.addEventListener('click', addProduto);
 
         function addProduto(){
 
-            var item = '<li>' + $produto.value + '</li>' ;
+            var item = '<li>' + $produto.value + '</li>'; // + '<button id="btn">Remover</button>';
             $lista.innerHTML += item;
             $produto.value = '';
             $produto.focus();
         }
+
+        /*
+        $botaoDel.addEventListener('click', delProduto);
+
+        function delProduto(){
+            var item = '<li>' + $produto.value + '</li>';
+            $lista.innerHTML -= item;
+            $produto.value = '';
+            $produto.focus();
+        } 
+        */
 
         $produto.addEventListener('keyup', function(e){
             console.log(e.keyCode);
@@ -51,8 +75,8 @@
     <footer>
 
        <button> <a href="index0.html">Voltar para a página inicial.</a> </button>
-    
+        
     </footer>
-
+    
 </body>
 </html>
