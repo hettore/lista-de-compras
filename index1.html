@@ -1,82 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de compras</title>
-    <link rel="stylesheet" type="text/css" href="style1.css" media="screen" />
-    <link rel="icon" href="carrinho.gif">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de compras</title>
+        <link rel="stylesheet" type="text/css" href="style1.css" media="screen" />
+        <link rel="icon" href="carrinho.gif">
+    </head>
+        <body>
     
-    <p>
-    <img class="displayed" width="300dpi" title="Carrinho de compras." alt="Carrinho de compras."src="ecommerce10.jpg"/>
-    <p>
+            <p>
+            <img class="displayed" width="300dpi" title="Carrinho de compras." alt="Carrinho de compras."src="ecommerce10.jpg"/>
+            <p>
 
-    <h1>Faça sua lista de compras aqui!</h1>
-    <hr>
+            <h1>Faça sua lista de compras aqui!</h1>
+            <hr>
     
-    <input type="text"  id="produto">
-    <button id="btn">Adicionar a lista</button>
-
-    <!--
-    <button id="del">Remover</button>
-    -->
+            <input type="text"  id="produto">
+            <button id="btn">Adicionar a lista</button>
     
-    <p>Colocar no carrinho:</p>
+            <p>Colocar no carrinho:</p>
 
-    <ul>
-    </ul>
+            <ul>
+            </ul>
 
-    <hr>
+            <hr>
 
-    <img class="displayed" width="150dpi" title="Carrinho de compras animado." alt="Carrinho de compras."src="carrinho.gif"/>
+            <img class="displayed" width="150dpi" title="Carrinho de compras animado." alt="Carrinho de compras."src="carrinho.gif"/>
     
-    <script>
-        var $lista = document.querySelector('ul');
-        var $produto = document.querySelector('#produto');
-        var $botao = document.querySelector('#btn');
+                <script>
+                    var $lista = document.querySelector('ul');
+                    var $produto = document.querySelector('#produto');
+                    var $botao = document.querySelector('#btn');     
 
-        /*
-        var $botaoDel = document.querySelector('#del');
-        */
+                    $botao.addEventListener('click', addProduto);
 
-        $botao.addEventListener('click', addProduto);
+                    function addProduto(){
 
-        function addProduto(){
+                    var item = '<li>' + $produto.value + '</li>';
+                    $lista.innerHTML += item;
+                    $produto.value = ''  ;
+                    $produto.focus();
+                    }
 
-            var item = '<li>' + $produto.value + '</li>'; // + '<button id="btn">Remover</button>';
-            $lista.innerHTML += item;
-            $produto.value = '';
-            $produto.focus();
-        }
+                    $produto.addEventListener('keyup', function(e){
+                    console.log(e.keyCode);
+                    if (e.keyCode === 13){
+                    addProduto()
+                    }
+                    })
 
-        /*
-        $botaoDel.addEventListener('click', delProduto);
-
-        function delProduto(){
-            var item = '<li>' + $produto.value + '</li>';
-            $lista.innerHTML -= item;
-            $produto.value = '';
-            $produto.focus();
-        } 
-        */
-
-        $produto.addEventListener('keyup', function(e){
-            console.log(e.keyCode);
-            if (e.keyCode === 13){
-                addProduto()
-            }
-        })
-
-    </script>
+                </script>
     
-    <footer>
+            <footer>
 
-       <button> <a href="index0.html">Voltar para a página inicial.</a> </button>
+                <button> <a href="index0.html">Voltar para a página inicial.</a> </button>
         
-    </footer>
+            </footer>
     
-</body>
+        </body>
 </html>
