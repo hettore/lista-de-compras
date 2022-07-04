@@ -19,7 +19,9 @@
     
             <input type="text"  id="produto">
             <button id="btn">Adicionar a lista</button>
-    
+
+            <button id="del">remover tudo</button>
+
             <p>Colocar no carrinho:</p>
 
             <ul>
@@ -28,11 +30,18 @@
             <hr>
 
             <img class="displayed" width="150dpi" title="Carrinho de compras animado." alt="Carrinho de compras."src="carrinho.gif"/>
-    
+
+                
                 <script>
+                   
                     var $lista = document.querySelector('ul');
                     var $produto = document.querySelector('#produto');
-                    var $botao = document.querySelector('#btn');     
+                    var $botao = document.querySelector('#btn');  
+                    
+                    var $deletar = document.querySelector('#del');
+                    var del = $deletar;
+
+                   
 
                     $botao.addEventListener('click', addProduto);
 
@@ -44,15 +53,23 @@
                     $produto.focus();
                     }
 
+                    del.addEventListener('click', delProduto);
+
+                    function delProduto(){
+                    $lista.innerHTML = " ";
+                    } 
+
+
                     $produto.addEventListener('keyup', function(e){
-                    console.log(e.keyCode);
+                      console.log(e.keyCode);
                     if (e.keyCode === 13){
                     addProduto()
                     }
                     })
 
                 </script>
-    
+            
+
             <footer>
 
                 <button> <a href="index0.html">Voltar para a página inicial.</a> </button>
