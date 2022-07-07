@@ -6,8 +6,15 @@ IMG.displayed {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
   }
   
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
 h1 {
     color: rgb(8, 0, 0);
@@ -28,7 +35,7 @@ hr {
     border-color: black;
   }
 
-  button{
+button{
     height: 30px;
     width: 180px;
     font-size: 20px;
@@ -45,4 +52,12 @@ input {
   width: 180px;
 }
 
+#rodape {
+  background-color: black;
   
+}
+
+#linkedin {
+  color: aliceblue;
+  text-align: center;
+}
