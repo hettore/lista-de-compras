@@ -54,7 +54,11 @@ input {
 
 #rodape {
   background-color: black;
-  
+    bottom: 0;
+    left: 0;
+    height: 45px;
+    position: fixed;
+    width: 100%;
 }
 
 #linkedin {
