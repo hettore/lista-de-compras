@@ -52,16 +52,19 @@ input {
   width: 180px;
 }
 
-#rodape {
+footer {
   background-color: black;
     bottom: 0;
     left: 0;
-    height: 45px;
-    position: fixed;
+    height: 60px;
+    position: relative;
     width: 100%;
+    border-top: 1px solid #333;
 }
 
 #linkedin {
   color: aliceblue;
   text-align: center;
+
 }
+
